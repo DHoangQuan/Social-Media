@@ -1,1 +1,0 @@
-{"ast":null,"code":"$(\"<%= escape_javascript(render @post) %>\").appendTo(\"#posts\");","map":{"version":3,"sources":["/home/quan/Social/app/javascript/create.js"],"names":["$","appendTo"],"mappings":"AAAAA,CAAC,CAAC,wCAAD,CAAD,CAA4CC,QAA5C,CAAqD,QAArD","sourcesContent":["$(\"<%= escape_javascript(render @post) %>\").appendTo(\"#posts\");"]},"metadata":{},"sourceType":"module"}
