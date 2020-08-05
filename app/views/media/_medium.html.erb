@@ -1,0 +1,22 @@
+<%# <p><%= image_tag medium.link_medium_url  %>
+<div class="containerDetail">
+  <% if medium.link_medium? %> 
+  <% type = file_type(medium.link_medium_url)  %>
+  <% if type == 'image'  %>
+  <span class="objectMedia"><%= image_tag medium.link_medium_url, class: "scaledown"%></span>
+  <span class="objectMedia">comment</span>
+  <% elsif type == 'video' %>
+  <span class="objectMedia"><%= video_tag medium.link_medium_url, class: "scaledown"%></span>
+  <span class="objectMedia">comment</span>
+  <% end  %>
+  <%end%>
+</div>
+<%# <% if medium.link_medium.present?  %>
+  <%# <% type = file_type(m.link_medium_url)  %>
+  <%# <% if type == 'image'  %>
+    <%# <%= image_tag medium.link_medium_url  %>
+  <%# <% elsif type == 'video' 		 %>
+    <%# <%= video_tag medium.link_medium_url  %>
+  <%# <% end  %>
+
+<%# <%end %>

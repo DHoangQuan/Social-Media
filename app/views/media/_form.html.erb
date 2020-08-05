@@ -1,0 +1,10 @@
+<%# <%= image_tag @post_attachment.avatar  %>
+<%= form_for(@medium) do |f| %>
+  <div class="field">
+    <%= f.label :like_medium %><br>
+    <%= f.file_field :like_medium %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

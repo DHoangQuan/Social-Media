@@ -1,0 +1,19 @@
+<%# <h1>hello </h1>
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="posts">
+    <%= render @posts 
+  </tbody>
+</table> %>
+<%# <div id="posts_pusher" style="display: flex; flex-direction: column-reverse;">
+
+</div>  %>
+<div id="posts" style="display: flex; flex-direction: column-reverse;" >
+<%# <div id="posts" > %>
+  <%= render @posts %>
+</div> 

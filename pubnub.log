@@ -1,0 +1,7 @@
+# Logfile created on 2020-06-29 09:51:59 +0700 by logger.rb/v1.4.2
+D, [2020-06-29T09:51:59.330536 #9901] DEBUG -- Pubnub::Telementry: Initialized Telemetry
+D, [2020-06-29T09:51:59.330683 #9901] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.27
+D, [2020-06-29T09:57:20.641982 #10173] DEBUG -- Pubnub::Telementry: Initialized Telemetry
+D, [2020-06-29T09:57:20.642148 #10173] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.27
+D, [2020-06-29T09:57:34.347595 #10307] DEBUG -- Pubnub::Telementry: Initialized Telemetry
+D, [2020-06-29T09:57:34.347720 #10307] DEBUG -- Pubnub::Client: Created new Pubnub::Client instance. Version: 4.0.27

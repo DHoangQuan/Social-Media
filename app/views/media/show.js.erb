@@ -1,0 +1,5 @@
+
+$('#showModal').modal('show');
+$('#medium').empty();
+$("<%= escape_javascript(render @medium) %> ").appendTo("#medium");
+

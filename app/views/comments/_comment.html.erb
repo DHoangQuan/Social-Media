@@ -1,0 +1,43 @@
+			<% unless comment.parent_comment_id.present?%>
+			<div id="comment">
+				<%= comment.comment_content %>
+				<ul class="navbar-right" style="list-style: none;">
+					<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">...</a>
+					<ul class="dropdown-menu">
+						<%# <li><%= link_to 'Destroy', comment_path(key), method: :delete, data: { confirm: 'Are you sure?' } </li> %>
+						<li><%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' }%> </li>
+						<li><a href="">Edit</a></li>
+					</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="childComment" >
+				<ul style="list-style: none;" id="parentComment_<%= comment.id %>">
+					
+						<% if comment.child_comments.present? %>
+							<%# <% comment.child_comments.each do |subcmt| %>
+								<%# <li><%= subcmt.comment_content</li> %>
+								
+								<%# <%= render comment.child_comments  %>
+								<%= render 'comments/child_comment', :object => comment.child_comments %>
+							<%# <%end %>
+						<%end%>
+					
+					</ul>
+					
+				<ul>
+					<div class="input-group">
+					<div class="input-group-btn">
+					<button class="btn btn-default">Add</button></button>
+					</div>
+					<%= form_with(model: Comment, remote: true) do |f| %>
+					<%= f.hidden_field :post_id, value: comment.post_id %>
+					<%= f.hidden_field :parent_comment_id, value: comment.id %>
+					<%= f.text_field :comment_content, class: "form-control" %>
+					<% end %>
+					</div>
+					</ul>
+			</div>
+			<br>
+		<%end%>
