@@ -28,6 +28,9 @@ gem 'pusher'
 # carrierwave for upload multiple images
 gem 'carrierwave'
 
+# simple form
+gem 'simple_form'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

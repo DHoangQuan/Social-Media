@@ -1,6 +1,5 @@
 
 #containermedia{
-  
   border: 1px solid #ddd; /* Gray border */
   border-radius: 4px;  /* Rounded border */
   padding: 5px; /* Some padding */
@@ -32,7 +31,7 @@
   font-size: 5rem;
 }
 
-span.objectMedia{
+div.objectMedia{
   width: 530px;
   display: inline-block;
 }

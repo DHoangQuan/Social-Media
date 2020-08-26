@@ -28,20 +28,22 @@
 						<%# <%= image_tag m.link_medium_url, height: '240', :style => "border: 1px solid #ddd; border-radius: 4px; padding: 5px;"   %>
 						<%# <%= image_tag m.link_medium_url, id: "media" %>
 						<% if post.media.count >= 5 && @num == 4 %>
-							<%= link_to medium_path(m.id), {:remote => true} do %>
+							<%# <%= link_to medium_path(m.id), {:remote => true} do  %>
+							<%= link_to medium_path(m.id) do %>
 								<div class="overlay"></div>
 								<p id="count">+<%= post.media.count - 4%></p>
 							<% end %>
 						<% end %>
 						
-						<%= link_to medium_path(m.id), {:remote => true} do %>
+						<%# <%= link_to medium_path(m.id), {:remote => true} do  %>
+						<%= link_to medium_path(m.id) do %>
 							<%= image_tag m.link_medium_url, id: "media" %>
 						<%end%>
 						
 					</div>
 					<% elsif type == 'video' %>			
 					<div id="containermedia" class="col-md-3">
-					<%# <div class="overlay"></div> %>
+					
 						<% if post.media.count >= 5 %>
 						<div class="overlay"></div>
 						<p id="count">+<%= post.media.count - 4%></p>
@@ -59,9 +61,11 @@
 	<div class="clearfix"></div>
 	<hr>
 	<div class="comments" id= "comments_<%= post.id %>">
-    <% if post.comments.present? %>
-      <%= render post.comments %>
-    <% end %>
+			<% if post.comments.present?  %>
+				
+					<%= render post.comments %>
+				
+			<% end %>
   </div>
 
 	
@@ -71,7 +75,7 @@
 			</div>
 			<%= form_with(model: Comment, remote: true) do |f| %>
 				<%= f.hidden_field :post_id, value: post.id %>
-				<%= f.text_field :comment_content, class: "form-control" %>
+				<%= f.text_field :comment_content, class: "comment_box form-control"%>
 			<% end %>
 		</div>
 	

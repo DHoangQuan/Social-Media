@@ -1,0 +1,21 @@
+<div>
+  <% if @medium_detail.link_medium? %>
+    <%= image_tag @medium_detail.link_medium_url, class: "scaledown"%>
+  <%end%>
+</div>
+<div class="objectMedia">
+    <div class="comments" id= "comments_media_<%= @medium_detail.id %>">
+    <% if @medium_detail.comments.present?%>  
+        <%= render 'comments/comment_media', :object => @medium_detail.comments %>
+    <% end %>
+  </div>
+    <div class="input-group">
+			<div class="input-group-btn">
+				<button class="btn btn-default">Add</button></button>
+			</div>
+			<%= form_with(model: Comment, remote: true) do |f| %>
+  <%= f.hidden_field :post_id, :value => @medium_detail.post_id%>
+  <%= f.hidden_field :medium_id, :value => @medium_detail.id%>
+  <%= f.text_field :comment_content, class: "form-control" %>
+  <%# <%= f.button :submit  %>
+<% end %>

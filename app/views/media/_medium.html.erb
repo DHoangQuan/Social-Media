@@ -1,13 +1,38 @@
 <%# <p><%= image_tag medium.link_medium_url  %>
 <div class="containerDetail">
-  <% if medium.link_medium? %> 
+  <% if medium.link_medium? %>
   <% type = file_type(medium.link_medium_url)  %>
   <% if type == 'image'  %>
-  <span class="objectMedia"><%= image_tag medium.link_medium_url, class: "scaledown"%></span>
-  <span class="objectMedia">comment</span>
+  <div class="objectMedia">
+  <%= link_to '<', previous_medium_url(medium.id), remote: true %> 
+  <%= link_to '>', next_medium_url(medium.id), remote: true %>
+  <%= image_tag medium.link_medium_url, class: "scaledown"%>
+  </div>
+  <div class="objectMedia">
+    <div class="comments" id= "comments_media_<%= medium.id %>">
+    <% if medium.comments.present?%>  
+        <%= render 'comments/comment_media', :object => medium.comments %>
+    <% end %>
+  </div>
+    <div class="input-group">
+			<div class="input-group-btn">
+				<button class="btn btn-default">Add</button></button>
+			</div>
+			<%= simple_form_for Comment.new do |f| %>
+  <%= f.hidden_field :post_id, :value => medium.post_id%>
+  <%= f.hidden_field :medium_id, :value => medium.id%>
+  <%= f.input :comment_content, class: "form-control" %>
+  <%# <%= f.button :submit  %>
+<% end %>
+		</div>
+  </div>
   <% elsif type == 'video' %>
-  <span class="objectMedia"><%= video_tag medium.link_medium_url, class: "scaledown"%></span>
-  <span class="objectMedia">comment</span>
+  <div class="objectMedia">
+  <%= video_tag medium.link_medium_url, class: "scaledown"%>
+  </div>
+  <div class="objectMedia">
+  <span >comment</span>
+  </div>
   <% end  %>
   <%end%>
 </div>

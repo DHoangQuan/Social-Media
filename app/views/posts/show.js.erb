@@ -1,2 +1,5 @@
-$('#PostArea').empty();
+
+$('.modal').modal('hide');
+$('#PostArea').val('');
 $("<%= escape_javascript(render @post) %> ").appendTo("#posts");
+
