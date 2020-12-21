@@ -3,12 +3,15 @@ class MediaController < ApplicationController
   
   def show    
     # byebug
-    @post = Post.new
-    @medium = @post.media.build
-    @medium_detail = Medium.find(params[:id])
+    # @post = Post.new
+    # @medium = @post.media.build
+    # @medium_detail = Medium.find(params[:id])
+
+    ViewStatisticWorker.perform(@medium.id)
+
     respond_to do |format|
-      # format.js
-      format.html
+      format.js
+      # format.html
     end
   end
 

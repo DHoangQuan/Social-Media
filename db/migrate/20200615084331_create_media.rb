@@ -4,6 +4,7 @@ class CreateMedia < ActiveRecord::Migration[6.0]
       t.string :link_medium
       t.string :description
       t.integer :post_id
+      t.integer :view
 
       t.timestamps
     end

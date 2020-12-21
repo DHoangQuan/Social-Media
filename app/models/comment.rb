@@ -7,7 +7,7 @@ class Comment < ApplicationRecord
     has_many :child_comments, :class_name => "Comment", :foreign_key => "parent_comment_id"
 
     has_many :likes
-
+    
     # after_commit :notify_pusher, on: [:create, :update]
     # def notify_pusher
     #     Pusher.trigger('Comment', 'new', self.as_json)

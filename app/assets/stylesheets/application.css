@@ -12,6 +12,7 @@
  *
  *= require bootstrap
  *= require facebook
+ *= require_loginfacebook
  *= require_tree .
  *= require_self
  */

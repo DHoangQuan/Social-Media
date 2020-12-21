@@ -1,1 +1,3 @@
-console.log('abc')
+
+$('#comments_media_<%= @comment.medium_id %>').append("<%=j render 'comments/comment_media_new', comment: @comment %>");
+$('.media_cmt_box').val('');

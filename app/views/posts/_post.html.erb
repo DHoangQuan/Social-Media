@@ -28,15 +28,15 @@
 						<%# <%= image_tag m.link_medium_url, height: '240', :style => "border: 1px solid #ddd; border-radius: 4px; padding: 5px;"   %>
 						<%# <%= image_tag m.link_medium_url, id: "media" %>
 						<% if post.media.count >= 5 && @num == 4 %>
-							<%# <%= link_to medium_path(m.id), {:remote => true} do  %>
-							<%= link_to medium_path(m.id) do %>
+							<%= link_to medium_path(m.id), {:remote => true} do %>
+							<%# <%= link_to medium_path(m.id) do  %>
 								<div class="overlay"></div>
 								<p id="count">+<%= post.media.count - 4%></p>
 							<% end %>
 						<% end %>
 						
-						<%# <%= link_to medium_path(m.id), {:remote => true} do  %>
-						<%= link_to medium_path(m.id) do %>
+						<%= link_to medium_path(m.id), {:remote => true} do%> 
+						<%# <%= link_to medium_path(m.id) do  %>
 							<%= image_tag m.link_medium_url, id: "media" %>
 						<%end%>
 						
@@ -73,8 +73,9 @@
 			<div class="input-group-btn">
 				<button class="btn btn-default">Add</button></button>
 			</div>
-			<%= form_with(model: Comment, remote: true) do |f| %>
+			<%= form_with(model: Comment) do |f| %>
 				<%= f.hidden_field :post_id, value: post.id %>
+				<%= f.hidden_field :user_id, value: session[:user_id] %>
 				<%= f.text_field :comment_content, class: "comment_box form-control"%>
 			<% end %>
 		</div>
@@ -91,14 +92,14 @@
 					</div>
 					<%# body %>
 					<div class="modal-body">
-						<form class="form center-block">
+						<%# <form class="form center-block"> %>
 						<div id="medium" class="form-group">
 							<%# add partial for render %>
 							<% if @medium.present? %>
 								<%= render @medium %>
 							<%end%>
 						</div>
-						</form>
+						<%# </form> %>
 					</div>
 				</div>
 				</div>

@@ -11,6 +11,8 @@ require("channels")
 
 require("jquery")
 require("bootstrap")
+require("clear")
+
 
 
 

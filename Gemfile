@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#sikiq for backgroundjob
+gem 'sidekiq'
+
 # pusher server for real-time
 gem 'pusher'
 
@@ -31,6 +34,10 @@ gem 'carrierwave'
 # simple form
 gem 'simple_form'
 
+# ma hoa
+gem 'bcrypt'
+
+gem 'jquery-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

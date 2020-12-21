@@ -1,13 +1,19 @@
 class PostsController < ApplicationController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
     def index
-        
+        # byebug
+        if session[:user_id].nil?
+            respond_to do |format|
+                format.html { render "sessions/new", :layout => false }
+            end
+        else
         # @posts = Post.all.order("created_at DESC")
         @posts = Post.all
         @post = Post.new
         @medium = @post.media.build
         @comments = Comment.all
         @comment = Comment.new
+        end
     end
 
     def create

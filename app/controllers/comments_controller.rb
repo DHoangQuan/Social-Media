@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   
 
   def create
-    # byebug
+    byebug
     @comment = @post.comments.build(comment_params)
     if @comment.save
 
@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
             format.js { render :child_comment}
 
           elsif params[:comment][:medium_id].present?
+            # byebug
             format.js { render :comment_media}
           else
             format.js
@@ -41,7 +42,7 @@ class CommentsController < ApplicationController
     if params[:post_id].present?
       @post = Post.find(params[:post_id])
     else
-    @post = Post.find(params[:comment][:post_id])
+      @post = Post.find(params[:comment][:post_id])
     end
   end
 
